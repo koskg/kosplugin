@@ -1,3 +1,3 @@
 <?php
 
-OW::getNavigation()->deleteMenuItem('kosplugin', '#####');
+OW::getNavigation()->deleteMenuItem('kosplugin', 'kosplugin');

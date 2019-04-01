@@ -1,7 +1,7 @@
 <?php
 
-//$path = OW::getPluginManager()->getPlugin('skeleton')->getRootDir() . 'langs.zip';
-//BOL_LanguageService::getInstance()->importPrefixFromZip($path, 'skeleton');
+$path = OW::getPluginManager()->getPlugin('kosplugin')->getRootDir() . 'langs.zip';
+BOL_LanguageService::getInstance()->importPrefixFromZip($path, 'kosplugin');
 
 /*
 $query = "CREATE TABLE IF NOT EXISTS `" . OW_DB_PREFIX . "skeleton_record` (
