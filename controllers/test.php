@@ -9,9 +9,14 @@
 
 class KOSPLUGIN_CTRL_Test extends OW_ActionController
 {
-
-    public function index()
+    public function init()
     {
 
+        OW::getDocument()->addStyleSheet( OW::getPluginManager()->getPlugin('kosplugin')->getStaticCssUrl().'kosplugin.css' );
+
+    }
+    public function index()
+    {
+     //   OW::getDocument()->addStyleSheet( OW::getPluginManager()->getPlugin('kosplugin')->getStaticCssUrl().'kosplugin.css' );
     }
 }
