@@ -46,7 +46,36 @@ class KOSPLUGIN_CTRL_Test extends OW_ActionController
         OW::getDocument()->setTitle("Form");
         OW::getDocument()->setHeading("Заговок");
 
+        $form = new KOSPLUGIN_CLASS_Test();
+
+        $service = KOSPLUGIN_BOL_Service::getInstance();
+
+        if ( OW::getRequest()->isPost() && $form->isValid($_POST) )
+        {
+            $values = $form->getValues();
+            $service->addData($values["text"]);
+
+            OW::getFeedback()->info("Запись добавлена");
+
+            $this->redirect();
+        }
+
+        $this->addForm($form);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
