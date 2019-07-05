@@ -23,7 +23,6 @@ class KOSPLUGIN_CTRL_Test extends OW_ActionController
         OW::getDocument()->addStyleSheet( OW::getPluginManager()->getPlugin('kosplugin')->getStaticCssUrl().'kosplugin.css' );
 
         OW::getDocument()->setTitle($language->text("kosplugin", "index_page_title"));
-        OW::getDocument()->setDescription($language->text("kosplugin", "index_page_description"));  //Спросить
         OW::getDocument()->setHeading($language->text("kosplugin", "index_page_heading"));
 
 
@@ -36,7 +35,7 @@ class KOSPLUGIN_CTRL_Test extends OW_ActionController
 
         $testMenu[] = array(
             "label" => "22222",
-            "url" => $router->urlFor("KOSPLUGIN_CTRL_Test", "index")
+            "url" => $router->urlForRoute("kosplugin-index")
         );
         $this->assign("menu", $testMenu);
 

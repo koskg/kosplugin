@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<prefix name="kosplugin" label="Kosplugin" language_tag="en" language_label="English">
+    <key name="kosplugin">
+        <value>Kosplugin</value>
+    </key>
+    <key name="index_page_title">
+        <value>Kosplugin</value>
+    </key>
+    <key name="index_page_heading">
+        <value>Kosplugin</value>
+    </key>
+    <key name="index_page_description">
+        <value>Это тестовый плагин!</value>
+    </key>
+</prefix>
