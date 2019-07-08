@@ -23,10 +23,15 @@ class KOSPLUGIN_BOL_Service
     }
 
 
-    public function addData( $text )
+    public function addData( $name, $surname, $email, $age, $img )
     {
         $data = new KOSPLUGIN_BOL_Data;
-        $data->text = $text;
+        $data->name = $name;
+        $data->surname = $surname;
+        $data->email = $email;
+        $data->age = $age;
+        $data->img = $img;
+
         return $this->dataDao->save($data);
     }
 

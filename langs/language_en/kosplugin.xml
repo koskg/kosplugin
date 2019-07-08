@@ -9,8 +9,34 @@
     <key name="index_page_heading">
         <value>Kosplugin</value>
     </key>
-    <key name="index_page_description">
-        <value>Это тестовый плагин!</value>
+    <key name="form_page_name_label">
+        <value>Name</value>
     </key>
-
+    <key name="form_page_name_description">
+        <value>Enter your name</value>
+    </key>
+    <key name="form_page_surname_label">
+        <value>Surname</value>
+    </key>
+    <key name="form_page_surname_description">
+        <value>Enter your surname</value>
+    </key>
+    <key name="form_page_email_label">
+        <value>Email</value>
+    </key>
+    <key name="form_page_email_description">
+        <value>Enter your email</value>
+    </key>
+    <key name="form_page_age_label">
+        <value>Age</value>
+    </key>
+    <key name="form_page_age_description">
+        <value>Enter your age( > 18)</value>
+    </key>
+    <key name="form_page_img_label">
+        <value>Avatar</value>
+    </key>
+    <key name="form_page_img_description">
+        <value>Avatar</value>
+    </key>
 </prefix>

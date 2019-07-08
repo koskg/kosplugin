@@ -9,12 +9,7 @@
 
 class KOSPLUGIN_CTRL_Test extends OW_ActionController
 {
-/*    public function init()
-    {
 
-        OW::getDocument()->addStyleSheet( OW::getPluginManager()->getPlugin('kosplugin')->getStaticCssUrl().'kosplugin.css' );
-
-    }*/
     public function index()
     {
         $language = OW::getLanguage();
@@ -44,18 +39,18 @@ class KOSPLUGIN_CTRL_Test extends OW_ActionController
     public function form()
     {
         OW::getDocument()->setTitle("Form");
-        OW::getDocument()->setHeading("Заговок.");
+        OW::getDocument()->setHeading("Form");
 
-        $form = new KOSPLUGIN_CLASS_Test();
+        $form = new KOSPLUGIN_CLASS_Form();
 
         $service = KOSPLUGIN_BOL_Service::getInstance();
 
         if ( OW::getRequest()->isPost() && $form->isValid($_POST) )
         {
             $values = $form->getValues();
-            $service->addData($values["text"]);
+            $service->addData($values["name"],$values["surname"],$values["email"],$values["age"],4);
 
-            OW::getFeedback()->info("Запись добавлена");
+            OW::getFeedback()->info("Record added");
 
             $this->redirect();
         }
