@@ -44,7 +44,7 @@ class KOSPLUGIN_CTRL_Test extends OW_ActionController
     public function form()
     {
         OW::getDocument()->setTitle("Form");
-        OW::getDocument()->setHeading("Заговок");
+        OW::getDocument()->setHeading("Заговок.");
 
         $form = new KOSPLUGIN_CLASS_Test();
 
