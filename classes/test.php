@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kos
- * Date: 01.04.2019
- * Time: 16:19
- */
-
 
 class KOSPLUGIN_CLASS_Test extends Form
 {
@@ -14,12 +7,11 @@ class KOSPLUGIN_CLASS_Test extends Form
         parent::__construct($name);
 
 //        $this->setAction('/sdfsdkfsdf');
-
-        $this->setAjax(true);
+        //$this->setAjax(true);
         $textField = new TextField("text");
         $textField->setLabel("Label");
         $textField->setDescription("Description");
-        $textField->setHasInvitation(false);
+        $textField->setHasInvitation(true);
         $textField->setInvitation('Hi');
         $textField->setRequired();
 
@@ -29,7 +21,6 @@ class KOSPLUGIN_CLASS_Test extends Form
         $submit->setLabel("Кнопка");
 
         $this->addElement($submit);
-
     }
 
 }
