@@ -12,6 +12,8 @@ class KOSPLUGIN_CLASS_Form extends Form
 
         $language = OW::getLanguage();
 
+        $this->setEnctype(Form::ENCTYPE_MULTYPART_FORMDATA);
+
 
         //form for name
         //$this->setAjax(true);
@@ -52,21 +54,11 @@ class KOSPLUGIN_CLASS_Form extends Form
         $ageField->setRequired();
         $this->addElement($ageField);
 
-/*        $ageField = new AgeRange("age");
-        $ageField->setLabel($language->text("kosplugin", "form_page_age_label"));
-        $ageField->setDescription($language->text("kosplugin", "form_page_age_description"));
-        $ageField->setMinAge(18);
-        $ageField->setMaxAge(120);
-        $ageField->setRequired();
-        $this->addElement($ageField);*/
-
-
         //form for img
         $imgField = new FileField("img");
         $imgField->setLabel($language->text("kosplugin", "form_page_img_label"));
         $imgField->setDescription($language->text("kosplugin", "form_page_img_description"));
-        //$imgField->setHasInvitation(true);
-        $imgField->setRequired();
+     //   $imgField->setRequired();
         $this->addElement($imgField);
 
         $submit = new Submit("submit");

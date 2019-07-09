@@ -47,8 +47,36 @@ class KOSPLUGIN_CTRL_Test extends OW_ActionController
 
         if ( OW::getRequest()->isPost() && $form->isValid($_POST) )
         {
+
             $values = $form->getValues();
-            $service->addData($values["name"],$values["surname"],$values["email"],$values["age"],4);
+
+            $imageName = "--";
+
+            if ( (int) $_FILES['img']['error'] !== 0 || !is_uploaded_file($_FILES['img']['tmp_name']) || !UTIL_File::validateImage($_FILES['img']['name']) )
+            {
+                OW::getFeedback()->error("not_valid_image");
+            }
+            else
+            {
+                $storage = OW::getStorage();
+
+                $imagesDir = OW::getPluginManager()->getPlugin('kosplugin')->getUserFilesDir();
+                $imageName = 'ava_'.md5($_FILES['img']['name']).'.jpg';
+                $imagePath = $imagesDir . $imageName;
+
+                if ( $storage->fileExists($imagePath) )
+                {
+                    $storage->removeFile($imagePath);
+                }
+
+                $image = new UTIL_Image($_FILES['img']['tmp_name']);
+
+                $image->resizeImage(200, null)->saveImage($imagePath);
+
+                unlink($_FILES['image']['tmp_name']);
+            }
+
+            $service->addData($values["name"],$values["surname"],$values["email"],$values["age"], $imageName);
 
             OW::getFeedback()->info("Record added");
 

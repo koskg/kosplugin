@@ -27,13 +27,16 @@ class KOSPLUGIN_CTRL_Data extends OW_ActionController
 
         $tplList = array();
 
+        $pluginUrl = OW::getPluginManager()->getPlugin('kosplugin')->getUserFilesUrl();
+
         foreach ( $list as $listItem )
         {
             $tplList[] = array(
                 "name" => $listItem->name,
                 "surname" => $listItem->surname,
                 "email" => $listItem->email,
-                "age" => $listItem->age
+                "age" => $listItem->age,
+                "img" => $pluginUrl.$listItem->img
             );
         }
 
