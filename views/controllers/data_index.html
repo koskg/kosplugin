@@ -1,0 +1,19 @@
+<div class="page_description">Data</div>
+
+
+{if $list}<h3 class="ow_center" style="margin-bottom: 10px;">Database records</h3>{/if}
+<table class="ow_table_1 ow_form ow_stdmargin">
+    {foreach from=$list item="listItem"}
+    <tr class="ow_tr_first ow_alt1">
+        <td>
+            <div>Name: {$listItem.name}</div>
+            <div>Surname: {$listItem.surname}</div>
+            <div>Email: {$listItem.email}</div>
+            <div>Age: {$listItem.age}</div>
+            <div class="ow_std_margin"><img src="{$listItem.img}"/></div>
+        </td>
+    </tr>
+    {/foreach}
+</table>
+
+

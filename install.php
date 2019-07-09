@@ -9,7 +9,11 @@ OW::getLanguage()->importLangsFromDir($plugin->getRootDir() . 'langs');
 
 $query = "CREATE TABLE IF NOT EXISTS `" . OW_DB_PREFIX . "kosplugin_data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `text` varchar(255) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `surname` varchar(128) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `age` int(11) NOT NULL,
+  `img` varchar(128) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;";
 
