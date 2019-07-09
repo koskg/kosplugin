@@ -35,6 +35,11 @@ class KOSPLUGIN_BOL_Service
         return $this->dataDao->save($data);
     }
 
+    public function findList()
+    {
+        return $this->dataDao->findAll();
+    }
+
 
 
 }

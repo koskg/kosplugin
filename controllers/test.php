@@ -29,8 +29,8 @@ class KOSPLUGIN_CTRL_Test extends OW_ActionController
         );
 
         $testMenu[] = array(
-            "label" => "22222",
-            "url" => $router->urlForRoute("kosplugin-index")
+            "label" => "View data",
+            "url" => $router->urlForRoute("kosplugin-data")
         );
         $this->assign("menu", $testMenu);
 
