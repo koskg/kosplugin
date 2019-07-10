@@ -24,9 +24,7 @@ class KOSPLUGIN_CTRL_Data extends OW_ActionController
         $service = KOSPLUGIN_BOL_Service::getInstance();
 
         $list = $service->findList();
-
         $tplList = array();
-
         $pluginUrl = OW::getPluginManager()->getPlugin('kosplugin')->getUserFilesUrl();
 
         foreach ( $list as $listItem )
@@ -36,7 +34,8 @@ class KOSPLUGIN_CTRL_Data extends OW_ActionController
                 "surname" => $listItem->surname,
                 "email" => $listItem->email,
                 "age" => $listItem->age,
-                "img" => $pluginUrl.$listItem->img
+                "img" => $pluginUrl.$listItem->img,
+                "id"=> $listItem->id
             );
         }
 
