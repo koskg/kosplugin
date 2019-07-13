@@ -32,7 +32,7 @@ class KOSPLUGIN_BOL_Service
         $data->age = $age;
         $data->img = $img;
 
-        return $this->dataDao->save($data);
+        $this->dataDao->save($data);
     }
 
     public function findList()
@@ -40,6 +40,10 @@ class KOSPLUGIN_BOL_Service
         return $this->dataDao->findAll();
     }
 
+    public function deleteRecord($id)
+    {
+        $this->dataDao->deleteById($id);
+    }
 
 
 }
