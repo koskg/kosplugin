@@ -2,6 +2,10 @@
 
 
 {if $list}<h3 class="ow_center" style="margin-bottom: 10px;">Database records</h3>{/if}
+{form name="formDel"}
+<div class="clearfix ow_submit ow_stdmargin">
+    <div class="ow_left ">{submit name='delSubmit'}</div>
+</div>
 <table class="ow_table_1 ow_form ow_stdmargin">
     {foreach from=$list item="listItem"}
     <tr class="ow_tr_first ow_alt1">
@@ -13,8 +17,14 @@
             <div class="ow_std_margin"><img src="{$listItem.img}"/></div>
             <div>ID: {$listItem.id}</div>
         </td>
+        <td class="ow_value">
+            {input name=$listItem.id}
+        </td>
     </tr>
     {/foreach}
 </table>
-
+<div class="clearfix ow_submit ow_stdmargin">
+    <div class="ow_left ">{submit name='delSubmit'}</div>
+</div>
+{/form}
 
