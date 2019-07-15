@@ -1,7 +1,6 @@
 <?php
 
-/*$path = OW::getPluginManager()->getPlugin('kosplugin')->getRootDir() . 'langs.zip';
-BOL_LanguageService::getInstance()->importPrefixFromZip($path, 'kosplugin');*/
+
 $pluginKey = 'kosplugin';
 $plugin = OW::getPluginManager()->getPlugin($pluginKey);
 OW::getLanguage()->importLangsFromDir($plugin->getRootDir() . 'langs');
