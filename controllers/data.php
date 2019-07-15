@@ -1,14 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kos
- * Date: 01.04.2019
- * Time: 16:19
- */
-
 
 class KOSPLUGIN_CTRL_Data extends OW_ActionController
 {
+
 
     public function index()
     {
@@ -31,12 +25,15 @@ class KOSPLUGIN_CTRL_Data extends OW_ActionController
                     $service->deleteRecord($key);
                 }
             }
+            $formDel->reset();
         }
 
         $list = $service->findList();
         $tplList = array();
 
         $pluginUrl = OW::getPluginManager()->getPlugin('kosplugin')->getUserFilesUrl();
+
+
 
         foreach ( $list as $listItem )
         {
@@ -52,12 +49,14 @@ class KOSPLUGIN_CTRL_Data extends OW_ActionController
             $checkId = new CheckboxField($idList);
             $formDel->addElement($checkId);
         }
+        $this->addForm($formDel);
+
         $submitDel = new Submit("delSubmit");
         $submitDel->setLabel("delete selected");
         $submitDel->setValue("delete selected");
         $formDel->addElement($submitDel);
 
-        $this->addForm($formDel);
+
         $this->assign("list", $tplList);
     }
 
